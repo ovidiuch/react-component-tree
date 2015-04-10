@@ -1,0 +1,11 @@
+{
+  "excludeFiles": [
+    ".git/**",
+    "node_modules/**",
+    "tests/coverage/**"
+  ],
+  "fileExtensions": [".js"],
+  "preset": "google",
+
+  "disallowMultipleVarDecl": null
+}

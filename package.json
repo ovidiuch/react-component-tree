@@ -1,0 +1,40 @@
+{
+  "name": "react-component-tree",
+  "version": "0.1.0",
+  "description": "Serialize and reproduce the state of an entire tree of React components",
+  "main": "src/main.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/skidding/react-component-tree.git"
+  },
+  "dependencies": {
+    "lodash": "^3.6.0",
+    "react": "^0.13.1"
+  },
+  "devDependencies": {
+    "chai": "^2.2.0",
+    "coveralls": "^2.11.2",
+    "istanbul": "^0.3.13",
+    "istanbul-instrumenter-loader": "^0.1.2",
+    "jscs": "^1.12.0",
+    "karma": "^0.12.31",
+    "karma-chai": "^0.1.0",
+    "karma-cli": "0.0.4",
+    "karma-coverage": "^0.2.7",
+    "karma-mocha": "^0.1.10",
+    "karma-mocha-reporter": "^1.0.2",
+    "karma-phantomjs-launcher": "^0.1.4",
+    "karma-sinon-chai": "^0.3.0",
+    "karma-webpack": "^1.5.0",
+    "lodash": "^3.6.0",
+    "mocha": "^2.2.4",
+    "sinon": "^1.14.1",
+    "sinon-chai": "^2.7.0",
+    "webpack": "^1.8.2"
+  },
+  "scripts": {
+    "pretest": "jscs ./",
+    "test": "karma start --single-run",
+    "coveralls": "cat tests/coverage/*/lcov.info | node_modules/coveralls/bin/coveralls.js"
+  }
+}

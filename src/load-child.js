@@ -1,7 +1,7 @@
 var _ = require('lodash'),
     React = require('react');
 
-module.exports = function(childTemplates, childName, a, b, c, d, e, f) {
+exports.loadChild = function(childTemplates, childName, a, b, c, d, e, f) {
   /**
    * Create a React element for a specific child type.
    *

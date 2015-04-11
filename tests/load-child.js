@@ -1,7 +1,7 @@
 var React = require('react'),
-    loadChild = require('../src/load-child.js');
+    loadChild = require('../src/load-child.js').loadChild;
 
-describe('Loading children', function() {
+describe('Load child', function() {
   var FirstComponent = {},
       SecondComponent = {},
       childTemplates;

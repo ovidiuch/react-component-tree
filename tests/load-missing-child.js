@@ -1,7 +1,7 @@
 var React = require('react'),
-    loadChild = require('../src/load-child.js');
+    loadChild = require('../src/load-child.js').loadChild;
 
-describe('Loading missing child', function() {
+describe('Load missing child', function() {
   var childTemplates;
 
   beforeEach(function() {

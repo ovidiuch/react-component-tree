@@ -17,7 +17,7 @@ module.exports = function(config) {
     webpack: {
       module: {
         loaders: [{
-          test: /\.js$/,
+          test: /load-child-component\.js$/,
           exclude: /node_modules/,
           loader: 'babel-loader'
         }],

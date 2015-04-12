@@ -1,21 +1,14 @@
 var _ = require('lodash'),
-    React = require('react'),
     loadChild = require('../src/load-child.js'),
-    LoadChildMixin = require('../src/load-child-mixin.js');
+    LoadChildComponent = require('../src/load-child-component.js');
 
-describe('Load child mixin', function() {
+describe('Load child component', function() {
   var fakeReactElement = {},
       myComponent;
 
-  var MyComponent = React.createClass({
-    mixins: [LoadChildMixin],
+  class MyComponent extends LoadChildComponent {}
 
-    statics: {
-      children: {}
-    },
-
-    render: function() {}
-  });
+  MyComponent.children = {};
 
   beforeEach(function() {
     sinon.stub(loadChild, 'loadChild').returns(fakeReactElement);

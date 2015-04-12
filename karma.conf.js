@@ -16,6 +16,11 @@ module.exports = function(config) {
     reporters: ['mocha', 'coverage'],
     webpack: {
       module: {
+        loaders: [{
+          test: /\.js$/,
+          exclude: /node_modules/,
+          loader: 'babel-loader'
+        }],
         postLoaders: [{
           test: /\.js$/,
           exclude: /(node_modules|tests)\//,

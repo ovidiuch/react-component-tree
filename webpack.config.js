@@ -6,6 +6,13 @@ module.exports = {
     'lodash': 'lodash',
     'react': 'react'
   },
+  module: {
+    loaders: [{
+      test: /\.js$/,
+      exclude: /node_modules/,
+      loader: 'babel-loader'
+    }]
+  },
   output: {
     libraryTarget: 'commonjs2',
     path: path.join(__dirname, 'build'),

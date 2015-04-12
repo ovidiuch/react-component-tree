@@ -1,5 +1,6 @@
 var _ = require('lodash'),
-    React = require('react'),
+    React = require('react/addons'),
+    renderIntoDocument = React.addons.TestUtils.renderIntoDocument,
     loadChild = require('../src/load-child.js'),
     LoadChildMixin = require('../src/load-child-mixin.js');
 
@@ -14,13 +15,15 @@ describe('Load child mixin', function() {
       children: {}
     },
 
-    render: function() {}
+    render: function() {
+      return React.DOM.span();
+    }
   });
 
   beforeEach(function() {
     sinon.stub(loadChild, 'loadChild').returns(fakeReactElement);
 
-    myComponent = new MyComponent();
+    myComponent = renderIntoDocument(React.createElement(MyComponent, {}));
   });
 
   afterEach(function() {

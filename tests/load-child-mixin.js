@@ -1,6 +1,6 @@
 var _ = require('lodash'),
     loadChild = require('../src/load-child.js'),
-    Mixin = require('../src/load-child-mixin.js').Mixin;
+    Mixin = require('../src/load-child-mixin.js');
 
 describe('Load child mixin', function() {
   var fakeReactElement = {},

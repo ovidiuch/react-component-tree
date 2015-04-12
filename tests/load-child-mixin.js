@@ -1,16 +1,26 @@
 var _ = require('lodash'),
+    React = require('react'),
     loadChild = require('../src/load-child.js'),
-    Mixin = require('../src/load-child-mixin.js');
+    LoadChildMixin = require('../src/load-child-mixin.js');
 
 describe('Load child mixin', function() {
   var fakeReactElement = {},
-      fakeComponent;
+      myComponent;
+
+  var MyComponent = React.createClass({
+    mixins: [LoadChildMixin],
+
+    statics: {
+      children: {}
+    },
+
+    render: function() {}
+  });
 
   beforeEach(function() {
     sinon.stub(loadChild, 'loadChild').returns(fakeReactElement);
 
-    fakeComponent = _.clone(Mixin);
-    fakeComponent.children = {};
+    myComponent = new MyComponent();
   });
 
   afterEach(function() {
@@ -18,10 +28,10 @@ describe('Load child mixin', function() {
   });
 
   it('should call loadChild lib with same args', function() {
-    fakeComponent.loadChild('myChild', 5, 10, true);
+    myComponent.loadChild('myChild', 5, 10, true);
 
     var args = loadChild.loadChild.lastCall.args;
-    expect(args[0]).to.equal(fakeComponent.children);
+    expect(args[0]).to.equal(MyComponent.children);
     expect(args[1]).to.equal('myChild');
     expect(args[2]).to.equal(5);
     expect(args[3]).to.equal(10);
@@ -29,6 +39,6 @@ describe('Load child mixin', function() {
   });
 
   it('should return what loadChild lib returned', function() {
-    expect(fakeComponent.loadChild()).to.equal(fakeReactElement);
+    expect(myComponent.loadChild()).to.equal(fakeReactElement);
   });
 });

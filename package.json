@@ -35,6 +35,7 @@
   "scripts": {
     "pretest": "jscs ./",
     "test": "karma start --single-run",
-    "coveralls": "cat tests/coverage/*/lcov.info | node_modules/coveralls/bin/coveralls.js"
+    "coveralls": "cat tests/coverage/*/lcov.info | node_modules/coveralls/bin/coveralls.js",
+    "build": "webpack -p"
   }
 }

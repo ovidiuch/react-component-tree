@@ -20,13 +20,13 @@ exports.render = function(options) {
       component = React.render(element, options.container);
 
   if (!_.isEmpty(state)) {
-    injectState(component, state);
+    exports.injectState(component, state);
   }
 
   return component;
 };
 
-var injectState = function(component, state) {
+exports.injectState = function(component, state) {
   var rootState = _.omit(state, 'children'),
       childrenStates = state.children;
 
@@ -38,7 +38,7 @@ var injectState = function(component, state) {
 
   _.each(component.refs, function(child, ref) {
     if (!_.isEmpty(childrenStates[ref])) {
-      injectState(child, childrenStates[ref]);
+      exports.injectState(child, childrenStates[ref]);
     }
   });
 };

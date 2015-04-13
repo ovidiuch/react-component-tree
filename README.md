@@ -14,6 +14,8 @@ Generate a snapshot with the props and state of a component combined, including
 the state of all nested child components.
 
 ```js
+var ComponentTree = require('react-component-tree');
+
 myCompany.setProps({public: true});
 myCompany.setState({profitable: true});
 myCompany.refs.employee54.setState({bored: false});
@@ -27,12 +29,12 @@ The snapshot looks like this:
   public: true,
   state: {
     profitable: true
-  },
-  children: {
-    employee54: {
-      bored: false
+    children: {
+      employee54: {
+        bored: false
+      }
     }
-  }
+  },
 }
 ```
 

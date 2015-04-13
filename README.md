@@ -28,7 +28,7 @@ The snapshot looks like this:
 {
   public: true,
   state: {
-    profitable: true
+    profitable: true,
     children: {
       employee54: {
         bored: false

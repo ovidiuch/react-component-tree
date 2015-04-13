@@ -1,4 +1,6 @@
 var _ = require('lodash'),
+    React = require('react/addons'),
+    renderIntoDocument = React.addons.TestUtils.renderIntoDocument,
     loadChild = require('../src/load-child.js'),
     LoadChildComponent = require('../src/load-child-component.js');
 
@@ -6,14 +8,18 @@ describe('Load child component', function() {
   var fakeReactElement = {},
       myComponent;
 
-  class MyComponent extends LoadChildComponent {}
+  class MyComponent extends LoadChildComponent {
+    render() {
+      return React.DOM.span();
+    }
+  }
 
   MyComponent.children = {};
 
   beforeEach(function() {
     sinon.stub(loadChild, 'loadChild').returns(fakeReactElement);
 
-    myComponent = new MyComponent();
+    myComponent = renderIntoDocument(React.createElement(MyComponent, {}));
   });
 
   afterEach(function() {

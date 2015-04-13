@@ -8,8 +8,7 @@
     "url": "https://github.com/skidding/react-component-tree.git"
   },
   "dependencies": {
-    "lodash": "^3.6.0",
-    "react": "^0.13.1"
+    "lodash": "^3.6.0"
   },
   "devDependencies": {
     "babel-core": "^5.0.12",
@@ -28,11 +27,14 @@
     "karma-phantomjs-launcher": "^0.1.4",
     "karma-sinon-chai": "^0.3.0",
     "karma-webpack": "^1.5.0",
-    "lodash": "^3.6.0",
     "mocha": "^2.2.4",
+    "react": "^0.13.1",
     "sinon": "^1.14.1",
     "sinon-chai": "^2.7.0",
     "webpack": "^1.8.2"
+  },
+  "peerDependencies": {
+    "react": "^0.13.1"
   },
   "scripts": {
     "pretest": "jscs --esnext ./",

@@ -1,6 +1,6 @@
 {
   "name": "react-component-tree",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Serialize and reproduce the state of an entire tree of React components",
   "main": "src/main.js",
   "repository": {
@@ -40,6 +40,7 @@
     "pretest": "jscs --esnext ./",
     "test": "karma start --single-run",
     "coveralls": "cat tests/coverage/*/lcov.info | node_modules/coveralls/bin/coveralls.js",
-    "build": "webpack -p"
+    "build": "webpack -p",
+    "prepublish": "npm run build"
   }
 }

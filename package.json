@@ -1,8 +1,8 @@
 {
   "name": "react-component-tree",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "Serialize and reproduce the state of an entire tree of React components",
-  "main": "src/main.js",
+  "main": "build/bundle.js",
   "repository": {
     "type": "git",
     "url": "https://github.com/skidding/react-component-tree.git"

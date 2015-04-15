@@ -1,22 +1,23 @@
 var _ = require('lodash'),
     React = require('react');
 
-exports.loadChild = function(childTemplates, childName, a, b, c, d, e, f) {
+exports.loadChild = function(component, childName, a, b, c, d, e, f) {
   /**
    * Create a React element for a specific child type.
    *
    * The component class and props of the child are returned together by a
-   * corresponding function from the childTemplates object. The functions are
+   * corresponding function from the .children object. The functions are
    * mapped with the name of the child as the key.
    *
    * https://facebook.github.io/react/docs/top-level-api.html#react.createelement
    *
-   * @param {Object} childTemplates Map of functions that generate child
-   *                                component params (component+props)
+   * @param {Object} component Parent component
+   * @param {Object} component.children Map of functions that generate child
+   *                                    component params (component+props)
    * @param {String} name Key that corresponds to the child component we want
    *                      to get the params for
    * @param {...*} [arguments] Optional extra arguments get passed to the
-   *                           component template function
+   *                           component .children function
    *
    * @returns {ReactElement} Created React element
    *
@@ -39,7 +40,7 @@ exports.loadChild = function(childTemplates, childName, a, b, c, d, e, f) {
    * });
    */
   var params = getChildParams.call(
-      this, childTemplates, childName, a, b, c, d, e, f);
+      this, component, childName, a, b, c, d, e, f);
 
   // One child with bad params shouldn't block the entire app
   try {
@@ -50,11 +51,11 @@ exports.loadChild = function(childTemplates, childName, a, b, c, d, e, f) {
   }
 };
 
-var getChildParams = function(childTemplates, childName, a, b, c, d, e, f) {
-  var params = childTemplates[childName].call(this, a, b, c, d, e, f);
+var getChildParams = function(component, childName, a, b, c, d, e, f) {
+  var params = component.children[childName].call(component, a, b, c, d, e, f);
 
-  // Default the child ref to its key name if the template doesn't return a
-  // value
+  // Default the child ref to its key name if the child template doesn't return
+  // a value
   if (!params.ref) {
     params.ref = childName;
   }

@@ -2,12 +2,14 @@ var React = require('react'),
     loadChild = require('../src/load-child.js').loadChild;
 
 describe('Load missing child', function() {
-  var childTemplates;
+  var component;
 
   beforeEach(function() {
-    childTemplates = {
-      missingChild: function() {
-        return {};
+    component = {
+      children: {
+        missingChild: function() {
+          return {};
+        }
       }
     };
 
@@ -26,12 +28,12 @@ describe('Load missing child', function() {
 
   it('should handle exception', function() {
     expect(function whereAreYouSon() {
-      loadChild(childTemplates, 'missingChild');
+      loadChild(component, 'missingChild');
     }).to.not.throw();
   });
 
   it('should log error', function() {
-    loadChild(childTemplates, 'missingChild');
+    loadChild(component, 'missingChild');
 
     expect(console.error.lastCall.args[0]).to.be.an.instanceof(Error);
   });

@@ -3,8 +3,7 @@ var React = require('react'),
 
 class LoadChildComponent extends React.Component {
   loadChild(childName, a, b, c, d, e, f) {
-    return loadChild.loadChild(
-        this.children, childName, a, b, c, d, e, f);
+    return loadChild.loadChild(this, childName, a, b, c, d, e, f);
   }
 }
 

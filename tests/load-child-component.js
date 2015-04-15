@@ -6,13 +6,12 @@ var _ = require('lodash'),
 
 describe('Load child component', function() {
   var fakeReactElement = {},
-      children = {},
       myComponent;
 
   class MyComponent extends LoadChildComponent {
     constructor(props) {
       super(props);
-      this.children = children;
+      this.children = {};
     }
     render() {
       return React.DOM.span();
@@ -33,7 +32,7 @@ describe('Load child component', function() {
     myComponent.loadChild('myChild', 5, 10, true);
 
     var args = loadChild.loadChild.lastCall.args;
-    expect(args[0]).to.equal(children);
+    expect(args[0]).to.equal(myComponent);
     expect(args[1]).to.equal('myChild');
     expect(args[2]).to.equal(5);
     expect(args[3]).to.equal(10);

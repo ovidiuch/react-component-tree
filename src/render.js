@@ -30,15 +30,15 @@ exports.injectState = function(component, state) {
   var rootState = _.omit(state, 'children'),
       childrenStates = state.children;
 
-  component.setState(rootState);
-
-  if (_.isEmpty(childrenStates)) {
-    return;
-  }
-
-  _.each(component.refs, function(child, ref) {
-    if (!_.isEmpty(childrenStates[ref])) {
-      exports.injectState(child, childrenStates[ref]);
+  component.setState(rootState, function() {
+    if (_.isEmpty(childrenStates)) {
+      return;
     }
+
+    _.each(component.refs, function(child, ref) {
+      if (!_.isEmpty(childrenStates[ref])) {
+        exports.injectState(child, childrenStates[ref]);
+      }
+    });
   });
 };

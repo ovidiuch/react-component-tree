@@ -2,7 +2,11 @@ var React = require('react'),
     render = require('../src/render.js').render;
 
 describe('Render', function() {
-  var domContainer;
+  var domContainer,
+      children = [React.createElement('span', {
+        key: '1',
+        children: 'test child'
+      })];
 
   class Component extends React.Component {
     render() {
@@ -18,7 +22,10 @@ describe('Render', function() {
 
     render({
       component: Component,
-      snapshot: {foo: 'bar'},
+      snapshot: {
+        foo: 'bar',
+        children: children
+      },
       container: domContainer
     });
   });
@@ -36,6 +43,16 @@ describe('Render', function() {
   it('should create element with props', function() {
     var args = React.createElement.lastCall.args;
     expect(args[1].foo).to.equal('bar');
+  });
+
+  it('should omit children from props', function() {
+    var args = React.createElement.lastCall.args;
+    expect(args[1].children).to.be.undefined;
+  });
+
+  it('should create element with children', function() {
+    var args = React.createElement.lastCall.args;
+    expect(args[2]).to.be.equal(children);
   });
 
   it('should render created element', function() {

@@ -4,7 +4,11 @@ var React = require('react'),
 describe('Load child', function() {
   var FirstComponent = {},
       SecondComponent = {},
-      component;
+      component,
+      children = [React.createElement('span', {
+        key: '1',
+        children: 'test child'
+      })];
 
   beforeEach(function() {
     component = {
@@ -12,7 +16,8 @@ describe('Load child', function() {
         defaultRef: sinon.spy(function() {
           return {
             component: FirstComponent,
-            alwaysTrue: true
+            alwaysTrue: true,
+            children: children
           };
         }),
         customRef: sinon.spy(function() {
@@ -61,6 +66,26 @@ describe('Load child', function() {
 
     var props = React.createElement.lastCall.args[1];
     expect(props.alwaysTrue).to.equal(true);
+  });
+
+  it('should omit component param from props', function() {
+    loadChild(component, 'defaultRef');
+
+    var props = React.createElement.lastCall.args[1];
+    expect(props.component).to.be.undefined;
+  });
+
+  it('should omit children param from props', function() {
+    loadChild(component, 'defaultRef');
+
+    var props = React.createElement.lastCall.args[1];
+    expect(props.children).to.be.undefined;
+  });
+
+  it('should create element using returned children', function() {
+    loadChild(component, 'defaultRef');
+
+    expect(React.createElement.lastCall.args[2]).to.equal(children);
   });
 
   it('should use child name as ref if omitted', function() {

@@ -45,7 +45,8 @@ exports.loadChild = function(component, childName, a, b, c, d, e, f) {
   // One child with bad params shouldn't block the entire app
   try {
     return React.createElement(params.component,
-                               _.omit(params, 'component'));
+                               _.omit(params, 'component', 'children'),
+                               params.children);
   } catch (e) {
     console.error(e);
   }

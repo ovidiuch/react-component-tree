@@ -13,10 +13,11 @@ exports.render = function(options) {
    *
    * @returns {ReactComponent} Reference to the rendered component
    */
-  var props = _.omit(options.snapshot, 'state'),
-      state = options.snapshot.state;
+  var props = _.omit(options.snapshot, 'state', 'children'),
+      state = options.snapshot.state,
+      children = options.snapshot.children;
 
-  var element = React.createElement(options.component, props),
+  var element = React.createElement(options.component, props, children),
       component = React.render(element, options.container);
 
   if (!_.isEmpty(state)) {

@@ -1,6 +1,6 @@
 {
   "name": "react-component-tree",
-  "version": "0.2.2",
+  "version": "0.2.3",
   "description": "Serialize and reproduce the state of an entire tree of React components",
   "main": "build/bundle.js",
   "repository": {

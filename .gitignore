@@ -1,3 +1,4 @@
-build
-node_modules
-tests/coverage
+build/
+node_modules/
+tests/coverage/
+dist/

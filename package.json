@@ -41,7 +41,6 @@
     "pretest": "jscs --esnext ./",
     "test": "karma start --single-run",
     "coveralls": "cat tests/coverage/*/lcov.info | node_modules/coveralls/bin/coveralls.js",
-    "build": "webpack -p",
     "compile": "babel -d dist/ src/",
     "prepublish": "rm -rf dist && npm run compile"
   }

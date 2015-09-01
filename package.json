@@ -2,7 +2,7 @@
   "name": "react-component-tree",
   "version": "0.2.3",
   "description": "Serialize and reproduce the state of an entire tree of React components",
-  "main": "build/bundle.js",
+  "main": "dist/entry.js",
   "repository": {
     "type": "git",
     "url": "https://github.com/skidding/react-component-tree.git"
@@ -11,6 +11,7 @@
     "lodash": "^3.6.0"
   },
   "devDependencies": {
+    "babel": "^5.8.23",
     "babel-core": "^5.0.12",
     "babel-loader": "^5.0.0",
     "chai": "^2.2.0",
@@ -41,6 +42,7 @@
     "test": "karma start --single-run",
     "coveralls": "cat tests/coverage/*/lcov.info | node_modules/coveralls/bin/coveralls.js",
     "build": "webpack -p",
-    "prepublish": "npm run build"
+    "compile": "babel -d dist/ src/",
+    "prepublish": "rm -rf dist && npm run compile"
   }
 }

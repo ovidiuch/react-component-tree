@@ -19,7 +19,7 @@
     "istanbul": "^0.3.13",
     "istanbul-instrumenter-loader": "^0.1.2",
     "jscs": "^1.12.0",
-    "karma": "^0.12.31",
+    "karma": "^0.13.9",
     "karma-chai": "^0.1.0",
     "karma-cli": "0.0.4",
     "karma-coverage": "^0.2.7",
@@ -27,12 +27,12 @@
     "karma-mocha-reporter": "^1.0.2",
     "karma-phantomjs-launcher": "^0.1.4",
     "karma-sinon-chai": "^0.3.0",
-    "karma-webpack": "^1.5.0",
+    "karma-webpack": "^1.7.0",
     "mocha": "^2.2.4",
     "react": "^0.13.1",
     "sinon": "^1.14.1",
     "sinon-chai": "^2.7.0",
-    "webpack": "^1.8.2"
+    "webpack": "^1.12.0"
   },
   "peerDependencies": {
     "react": "^0.13.1"

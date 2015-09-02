@@ -1,9 +1,9 @@
 {
   "excludeFiles": [
     ".git/**",
-    "build/**",
     "node_modules/**",
-    "tests/coverage/**"
+    "tests/coverage/**",
+    "dist/**"
   ],
   "fileExtensions": [".js"],
   "preset": "google",

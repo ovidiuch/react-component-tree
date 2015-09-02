@@ -2,7 +2,7 @@
   "name": "react-component-tree",
   "version": "0.2.3",
   "description": "Serialize and reproduce the state of an entire tree of React components",
-  "main": "build/bundle.js",
+  "main": "dist/entry.js",
   "repository": {
     "type": "git",
     "url": "https://github.com/skidding/react-component-tree.git"
@@ -11,6 +11,7 @@
     "lodash": "^3.6.0"
   },
   "devDependencies": {
+    "babel": "^5.8.23",
     "babel-core": "^5.0.12",
     "babel-loader": "^5.0.0",
     "chai": "^2.2.0",
@@ -18,7 +19,7 @@
     "istanbul": "^0.3.13",
     "istanbul-instrumenter-loader": "^0.1.2",
     "jscs": "^1.12.0",
-    "karma": "^0.12.31",
+    "karma": "^0.13.9",
     "karma-chai": "^0.1.0",
     "karma-cli": "0.0.4",
     "karma-coverage": "^0.2.7",
@@ -26,12 +27,12 @@
     "karma-mocha-reporter": "^1.0.2",
     "karma-phantomjs-launcher": "^0.1.4",
     "karma-sinon-chai": "^0.3.0",
-    "karma-webpack": "^1.5.0",
+    "karma-webpack": "^1.7.0",
     "mocha": "^2.2.4",
     "react": "^0.13.1",
     "sinon": "^1.14.1",
     "sinon-chai": "^2.7.0",
-    "webpack": "^1.8.2"
+    "webpack": "^1.12.0"
   },
   "peerDependencies": {
     "react": "^0.13.1"
@@ -40,7 +41,7 @@
     "pretest": "jscs --esnext ./",
     "test": "karma start --single-run",
     "coveralls": "cat tests/coverage/*/lcov.info | node_modules/coveralls/bin/coveralls.js",
-    "build": "webpack -p",
-    "prepublish": "npm run build"
+    "compile": "babel -d dist/ src/",
+    "prepublish": "rm -rf dist && npm run compile"
   }
 }

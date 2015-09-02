@@ -7,6 +7,7 @@
     "type": "git",
     "url": "https://github.com/skidding/react-component-tree.git"
   },
+  "license": "MIT",
   "dependencies": {
     "lodash": "^3.6.0"
   },

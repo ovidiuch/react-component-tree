@@ -2,7 +2,7 @@ var React = require('react'),
     ReactDOM = require('react-dom'),
     TestUtils = require('react-addons-test-utils'),
     renderIntoDocument = TestUtils.renderIntoDocument,
-    render = require('../src/render.js').render;
+    render = require('../../src/render.js').render;
 
 describe('Render and inject state', function() {
   var component;

@@ -1,5 +1,5 @@
 var React = require('react'),
-    loadChild = require('../src/load-child.js').loadChild;
+    loadChild = require('../../src/load-child.js').loadChild;
 
 describe('Load missing child', function() {
   var component;

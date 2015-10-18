@@ -2,21 +2,22 @@ var _ = require('lodash'),
     React = require('react'),
     TestUtils = require('react-addons-test-utils'),
     renderIntoDocument = TestUtils.renderIntoDocument,
-    loadChild = require('../src/load-child.js'),
-    LoadChildMixin = require('../src/load-child-mixin.js');
+    loadChild = require('../../src/load-child.js'),
+    LoadChildComponent = require('../../src/load-child-component.js');
 
-describe('Load child mixin', function() {
+describe('Load child component', function() {
   var fakeReactElement = {},
       myComponent;
 
-  var MyComponent = React.createClass({
-    mixins: [LoadChildMixin],
-    children: {},
-
-    render: function() {
+  class MyComponent extends LoadChildComponent {
+    constructor(props) {
+      super(props);
+      this.children = {};
+    }
+    render() {
       return React.DOM.span();
     }
-  });
+  }
 
   beforeEach(function() {
     sinon.stub(loadChild, 'loadChild').returns(fakeReactElement);

@@ -1,6 +1,6 @@
 var React = require('react'),
     ReactDOM = require('react-dom'),
-    render = require('../src/render.js').render;
+    render = require('../../src/render.js').render;
 
 describe('Render', function() {
   var domContainer,

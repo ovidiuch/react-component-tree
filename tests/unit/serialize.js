@@ -1,7 +1,7 @@
 var React = require('react'),
     TestUtils = require('react-addons-test-utils'),
     renderIntoDocument = TestUtils.renderIntoDocument,
-    serialize = require('../src/serialize.js').serialize;
+    serialize = require('../../src/serialize.js').serialize;
 
 describe('Serialize', function() {
   class ChildComponent extends React.Component {

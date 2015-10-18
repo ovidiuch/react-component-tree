@@ -1,5 +1,6 @@
 var _ = require('lodash'),
-    React = require('react');
+    React = require('react'),
+    ReactDOM = require('react-dom');
 
 exports.render = function(options) {
   /**
@@ -18,7 +19,7 @@ exports.render = function(options) {
       children = options.snapshot.children;
 
   var element = React.createElement(options.component, props, children),
-      component = React.render(element, options.container);
+      component = ReactDOM.render(element, options.container);
 
   if (!_.isEmpty(state)) {
     exports.injectState(component, state);

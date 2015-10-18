@@ -1,4 +1,5 @@
 var React = require('react'),
+    ReactDOM = require('react-dom'),
     render = require('../src/render.js').render;
 
 describe('Render', function() {
@@ -16,7 +17,7 @@ describe('Render', function() {
 
   beforeEach(function() {
     sinon.spy(React, 'createElement');
-    sinon.stub(React, 'render');
+    sinon.stub(ReactDOM, 'render');
 
     domContainer = document.createElement('div');
 
@@ -32,7 +33,7 @@ describe('Render', function() {
 
   afterEach(function() {
     React.createElement.restore();
-    React.render.restore();
+    ReactDOM.render.restore();
   });
 
   it('should create element for component', function() {
@@ -56,12 +57,12 @@ describe('Render', function() {
   });
 
   it('should render created element', function() {
-    var args = React.render.lastCall.args;
+    var args = ReactDOM.render.lastCall.args;
     expect(args[0]).to.equal(React.createElement.returnValues[0]);
   });
 
   it('should render in given container', function() {
-    var args = React.render.lastCall.args;
+    var args = ReactDOM.render.lastCall.args;
     expect(args[1]).to.equal(domContainer);
   });
 });

@@ -1,4 +1,5 @@
 var React = require('react'),
+    ReactDOM = require('react-dom'),
     TestUtils = require('react-addons-test-utils'),
     renderIntoDocument = TestUtils.renderIntoDocument,
     render = require('../src/render.js').render;
@@ -31,11 +32,11 @@ describe('Render and inject state', function() {
     sinon.spy(component.refs.child, 'setState');
     sinon.spy(component.refs.child.refs.child, 'setState');
 
-    sinon.stub(React, 'render').returns(component);
+    sinon.stub(ReactDOM, 'render').returns(component);
   });
 
   afterEach(function() {
-    React.render.restore();
+    ReactDOM.render.restore();
   });
 
   it('should set state on root component', function() {

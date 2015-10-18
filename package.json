@@ -1,6 +1,6 @@
 {
   "name": "react-component-tree",
-  "version": "0.2.4",
+  "version": "0.3.0",
   "description": "Serialize and reproduce the state of an entire tree of React components",
   "main": "dist/entry.js",
   "repository": {
@@ -22,7 +22,7 @@
     "jscs": "^1.12.0",
     "karma": "^0.13.9",
     "karma-chai": "^0.1.0",
-    "karma-cli": "0.0.4",
+    "karma-cli": "0.1.1",
     "karma-coverage": "^0.2.7",
     "karma-mocha": "^0.1.10",
     "karma-mocha-reporter": "^1.0.2",
@@ -30,14 +30,16 @@
     "karma-sinon-chai": "^0.3.0",
     "karma-webpack": "^1.7.0",
     "mocha": "^2.2.4",
-    "react": "^0.13.1",
+    "react": "^0.14.0",
     "react-addons-test-utils": "^0.14.0",
+    "react-dom": "^0.14.0",
     "sinon": "^1.14.1",
     "sinon-chai": "^2.7.0",
     "webpack": "^1.12.0"
   },
   "peerDependencies": {
-    "react": "^0.13.1"
+    "react": "^0.14.0",
+    "react-dom": "^0.14.0"
   },
   "scripts": {
     "pretest": "jscs --esnext ./",

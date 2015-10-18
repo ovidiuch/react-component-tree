@@ -5,7 +5,7 @@ var _ = require('lodash'),
     loadChild = require('../../src/load-child.js'),
     LoadChildComponent = require('../../src/load-child-component.js');
 
-describe('Load child component', function() {
+describe('UNIT Load child component', function() {
   var fakeReactElement = {},
       myComponent;
 

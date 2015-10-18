@@ -1,7 +1,7 @@
 var React = require('react'),
     loadChild = require('../../src/load-child.js').loadChild;
 
-describe('Load missing child', function() {
+describe('UNIT Load missing child', function() {
   var component;
 
   beforeEach(function() {

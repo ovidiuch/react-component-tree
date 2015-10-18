@@ -5,7 +5,7 @@ var _ = require('lodash'),
     loadChild = require('../../src/load-child.js'),
     LoadChildMixin = require('../../src/load-child-mixin.js');
 
-describe('Load child mixin', function() {
+describe('UNIT Load child mixin', function() {
   var fakeReactElement = {},
       myComponent;
 

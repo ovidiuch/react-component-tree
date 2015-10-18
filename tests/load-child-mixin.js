@@ -1,6 +1,7 @@
 var _ = require('lodash'),
-    React = require('react/addons'),
-    renderIntoDocument = React.addons.TestUtils.renderIntoDocument,
+    React = require('react'),
+    TestUtils = require('react-addons-test-utils'),
+    renderIntoDocument = TestUtils.renderIntoDocument,
     loadChild = require('../src/load-child.js'),
     LoadChildMixin = require('../src/load-child-mixin.js');
 

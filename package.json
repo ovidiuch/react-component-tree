@@ -14,12 +14,14 @@
   "devDependencies": {
     "babel": "^5.8.23",
     "babel-core": "^5.0.12",
+    "babel-eslint": "^4.1.5",
     "babel-loader": "^5.0.0",
     "chai": "^2.2.0",
     "coveralls": "^2.11.2",
+    "eslint": "^1.9.0",
+    "eslint-plugin-react": "^3.8.0",
     "istanbul": "^0.3.13",
     "istanbul-instrumenter-loader": "^0.1.2",
-    "jscs": "^1.12.0",
     "karma": "^0.13.9",
     "karma-chai": "^0.1.0",
     "karma-cli": "0.1.1",
@@ -42,7 +44,8 @@
     "react-dom": "^0.14.0"
   },
   "scripts": {
-    "pretest": "jscs --esnext ./",
+    "pretest": "npm run lint",
+    "lint": "eslint .",
     "test": "karma start --single-run",
     "coveralls": "cat tests/coverage/*/lcov.info | node_modules/coveralls/bin/coveralls.js",
     "compile": "babel -d dist/ src/",

@@ -7,7 +7,9 @@ module.exports = function(config) {
       dir: 'coverage/'
     },
     files: [
-      '**/*.js'
+      'bind-polyfill.js',
+      'unit/*.js',
+      'integration/*.js'
     ],
     frameworks: ['mocha', 'chai', 'sinon-chai'],
     preprocessors: {

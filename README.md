@@ -8,6 +8,10 @@ A few examples where this can be useful:
 that exact state later on when debugging
 - "Pausing" the app state and resuming it later (nice for games)
 
+React compatibility:
+- `react-component-tree@0.2` with `react@0.13` and below
+- `react-component-tree@0.3` with `react@0.14` and above
+
 ## ComponentTree.serialize
 
 Generate a snapshot with the props and state of a component combined, including

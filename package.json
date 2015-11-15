@@ -1,6 +1,6 @@
 {
   "name": "react-component-tree",
-  "version": "0.2.4",
+  "version": "0.3.0",
   "description": "Serialize and reproduce the state of an entire tree of React components",
   "main": "dist/entry.js",
   "repository": {
@@ -14,15 +14,17 @@
   "devDependencies": {
     "babel": "^5.8.23",
     "babel-core": "^5.0.12",
+    "babel-eslint": "^4.1.5",
     "babel-loader": "^5.0.0",
     "chai": "^2.2.0",
     "coveralls": "^2.11.2",
+    "eslint": "^1.9.0",
+    "eslint-plugin-react": "^3.8.0",
     "istanbul": "^0.3.13",
     "istanbul-instrumenter-loader": "^0.1.2",
-    "jscs": "^1.12.0",
     "karma": "^0.13.9",
     "karma-chai": "^0.1.0",
-    "karma-cli": "0.0.4",
+    "karma-cli": "0.1.1",
     "karma-coverage": "^0.2.7",
     "karma-mocha": "^0.1.10",
     "karma-mocha-reporter": "^1.0.2",
@@ -30,16 +32,20 @@
     "karma-sinon-chai": "^0.3.0",
     "karma-webpack": "^1.7.0",
     "mocha": "^2.2.4",
-    "react": "^0.13.1",
+    "react": "^0.14.0",
+    "react-addons-test-utils": "^0.14.0",
+    "react-dom": "^0.14.0",
     "sinon": "^1.14.1",
     "sinon-chai": "^2.7.0",
     "webpack": "^1.12.0"
   },
   "peerDependencies": {
-    "react": "^0.13.1"
+    "react": "^0.14.0",
+    "react-dom": "^0.14.0"
   },
   "scripts": {
-    "pretest": "jscs --esnext ./",
+    "pretest": "npm run lint",
+    "lint": "eslint .",
     "test": "karma start --single-run",
     "coveralls": "cat tests/coverage/*/lcov.info | node_modules/coveralls/bin/coveralls.js",
     "compile": "babel -d dist/ src/",

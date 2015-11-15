@@ -1,8 +1,9 @@
-var React = require('react/addons'),
-    renderIntoDocument = React.addons.TestUtils.renderIntoDocument,
-    serialize = require('../src/serialize.js').serialize;
+var React = require('react'),
+    TestUtils = require('react-addons-test-utils'),
+    renderIntoDocument = TestUtils.renderIntoDocument,
+    serialize = require('../../src/serialize.js').serialize;
 
-describe('Serialize', function() {
+describe('UNIT Serialize', function() {
   class ChildComponent extends React.Component {
     render() {
       return React.DOM.span();

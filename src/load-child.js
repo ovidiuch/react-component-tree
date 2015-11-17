@@ -57,9 +57,17 @@ var getChildParams = function(component, childName, a, b, c, d, e, f) {
 
   // Default the child ref to its key name if the child template doesn't return
   // a value
-  if (!params.ref) {
+  if (!params.ref && isClassComponent(params.component)) {
     params.ref = childName;
   }
 
   return params;
+};
+
+var isClassComponent = function(Component) {
+  // Inspired from Recompose: http://bit.ly/1NCac7D
+  return Component &&
+         Component.prototype &&
+         // Only evidence this is reliable: http://bit.ly/1MQPRyU
+         typeof(Component.prototype.isReactComponent) === 'object';
 };

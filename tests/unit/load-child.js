@@ -1,9 +1,20 @@
 var React = require('react'),
+    _ = require('lodash'),
     loadChild = require('../../src/load-child.js').loadChild;
 
+var ReactComponent = {
+  prototype: {
+    isReactComponent: {}
+  }
+};
+var StatelessComponent = {
+  prototype: {}
+};
+
 describe('UNIT Load child', function() {
-  var FirstComponent = {},
-      SecondComponent = {},
+  var FirstComponent = _.cloneDeep(ReactComponent),
+      SecondComponent =_.cloneDeep(ReactComponent),
+      ThirdComponent =_.cloneDeep(StatelessComponent),
       component,
       children = [React.createElement('span', {
         key: '1',
@@ -25,7 +36,12 @@ describe('UNIT Load child', function() {
             component: SecondComponent,
             ref: 'fooChild'
           };
-        })
+        }),
+        omittedRef: function() {
+          return {
+            component: ThirdComponent
+          };
+        }
       }
     };
 
@@ -100,5 +116,12 @@ describe('UNIT Load child', function() {
 
     var props = React.createElement.lastCall.args[1];
     expect(props.ref).to.equal('fooChild');
+  });
+
+  it('should omit ref for stateless components', function() {
+    loadChild(component, 'omittedRef');
+
+    var props = React.createElement.lastCall.args[1];
+    expect(props.ref).to.be.undefined;
   });
 });

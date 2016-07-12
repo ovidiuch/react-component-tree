@@ -1,4 +1,4 @@
-# React ComponentTree [![Build Status](https://travis-ci.org/skidding/react-component-tree.svg?branch=master)](https://travis-ci.org/skidding/react-component-tree) [![Coverage Status](https://coveralls.io/repos/skidding/react-component-tree/badge.svg?branch=master)](https://coveralls.io/r/skidding/react-component-tree?branch=master)
+# React Component Tree [![Build Status](https://travis-ci.org/skidding/react-component-tree.svg?branch=master)](https://travis-ci.org/skidding/react-component-tree) [![Coverage Status](https://coveralls.io/repos/skidding/react-component-tree/badge.svg?branch=master)](https://coveralls.io/r/skidding/react-component-tree?branch=master)
 
 Serialize and reproduce the state of an entire tree of React components.
 
@@ -10,7 +10,7 @@ that exact state later on when debugging
 
 React compatibility:
 - `react-component-tree@0.2` with `react@0.13` and below
-- `react-component-tree@0.3` with `react@0.14` and above
+- `react-component-tree@0.4` with `react@0.14` and above
 
 ## ComponentTree.serialize
 

@@ -1,6 +1,6 @@
 {
   "name": "react-component-tree",
-  "version": "0.3.1",
+  "version": "0.4.0",
   "description": "Serialize and reproduce the state of an entire tree of React components",
   "main": "dist/entry.js",
   "repository": {
